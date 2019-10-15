@@ -7,7 +7,13 @@ import app from '../../src/app';
 describe('Status route test:', () => {
   let sandbox;
   let server;
+  const dir = './public';
+  const versionFile = './public/VERSION';
   before((done) => {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+      fs.writeFileSync(versionFile, '0.0.1');
+    }
     sandbox = sinon.createSandbox();
     app.start().then((application) => {
       server = application;
@@ -38,7 +44,6 @@ describe('Status route test:', () => {
       });
   });
   it('GET: /api/status/version (file removed)', () => {
-    const versionFile = './public/VERSION';
     fs.unlinkSync(versionFile);
     return request(server)
       .get('/api/status/version')
