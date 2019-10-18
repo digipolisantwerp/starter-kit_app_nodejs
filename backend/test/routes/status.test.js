@@ -50,11 +50,11 @@ describe('Status route test:', () => {
       .expect('Content-Type', /json/)
       .expect(404)
       .then(({ body }) => {
-        expect(body.message).to.deep.equal('Version file not found. Have you build the container with a release arg?');
+        expect(body.message).to.deep.equal('Version file not found. Have you built the container with a release arg?');
       });
   });
   it('GET: /api/status/version (general error)', () => {
-    sandbox.stub(fs, 'statSync').throws(new Error('db error'));
+    sandbox.stub(fs, 'readFileSync').throws(new Error('db error'));
     return request(server)
       .get('/api/status/version')
       .expect('Content-Type', /json/)
