@@ -54,7 +54,7 @@ describe('Status route test:', () => {
       });
   });
   it('GET: /api/status/version (general error)', () => {
-    sandbox.stub(fs, 'readFileSync').throws(new Error('db error'));
+    sandbox.stub(fs, 'readFile').yields(new Error('Error'));
     return request(server)
       .get('/api/status/version')
       .expect('Content-Type', /json/)

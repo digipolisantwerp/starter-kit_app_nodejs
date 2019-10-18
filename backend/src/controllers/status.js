@@ -1,14 +1,16 @@
 import fs from 'fs';
+import util from 'util';
 import Errors from '../errors';
 
 function getStatus(req, res) {
   return res.status(200).json();
 }
 
-function getVersion(req, res, next) {
+async function getVersion(req, res, next) {
   try {
+    const readFile = util.promisify(fs.readFile);
     const versionFile = './public/VERSION';
-    const version = fs.readFileSync(versionFile, 'utf8');
+    const version = await readFile(versionFile, 'utf8');
     return res.status(200).json({ version });
   } catch (e) {
     console.log('Something went wrong in getVersion: ', e);
