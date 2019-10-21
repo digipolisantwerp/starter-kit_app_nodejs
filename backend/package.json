@@ -45,7 +45,7 @@
     "eslint-plugin-import": "~2.11.0",
     "mocha": "~5.1.1",
     "nodemon": "^1.18.10",
-    "nyc": "^13.3.0",
+    "nyc": "^14.1.1",
     "rewire": "^4.0.1",
     "sinon": "^7.4.1",
     "supertest": "^3.0.0"
