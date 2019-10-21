@@ -1,8 +1,9 @@
 import express from 'express';
-import { getStatus } from '../controllers/status';
+import { getStatus, getVersion } from '../controllers/status';
 
 const router = new express.Router();
 
 router.get('/', getStatus);
+router.get('/version', getVersion);
 
 export default router;
