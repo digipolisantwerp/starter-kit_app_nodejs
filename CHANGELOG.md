@@ -42,9 +42,9 @@ First tagged release.
 
 [Unreleased]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.2.0...HEAD
 
-[1.2.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.0.1
+[1.2.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.2.0
 
-[1.1.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.0.1
+[1.1.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.1.0
 
 [1.0.1]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.0.1
 
