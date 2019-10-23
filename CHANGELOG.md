@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2019-10-23
+ 
+ - Add version call
+ - Use `npm ci` for faster and stricter builds
+ - Upgrade to node 12.13 (LTS)
+ - Remove support for node 8
+ - Upgrade Stretch to Buster
+ - Remove vulnerabilities
+
 ## [1.1.0] - 2019-09-17
  
  - Remove the need to initialize the error middleware
@@ -31,7 +40,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 First tagged release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.2.0...HEAD
+
+[1.2.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.0.1
 
 [1.1.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.0.1
 
