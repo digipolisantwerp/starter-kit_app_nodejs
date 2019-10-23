@@ -1,4 +1,4 @@
-FROM node:10.16.3-stretch
+FROM node:12.13-buster
 
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
@@ -9,7 +9,7 @@ RUN mkdir -p /app/frontend
 WORKDIR /app/frontend
 
 COPY frontend ./
-# RUN npm install
+# RUN npm ci
 # RUN npm run build
 
 ###############################################################################
@@ -19,8 +19,8 @@ COPY frontend ./
 RUN mkdir -p /app/backend
 WORKDIR /app/backend
 
-COPY backend/package.json ./
-RUN npm install
+COPY backend/package.json backend/package-lock.json ./
+RUN npm ci
 COPY backend ./
 RUN npm run build
 

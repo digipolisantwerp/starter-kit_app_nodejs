@@ -1,5 +1,4 @@
-import fs from 'fs';
-import util from 'util';
+import { promises as fs } from 'fs';
 import Errors from '../errors';
 
 function getStatus(req, res) {
@@ -8,9 +7,8 @@ function getStatus(req, res) {
 
 async function getVersion(req, res, next) {
   try {
-    const readFile = util.promisify(fs.readFile);
     const versionFile = './public/VERSION';
-    const version = await readFile(versionFile, 'utf8');
+    const version = await fs.readFile(versionFile, 'utf8');
     return res.status(200).json({ version });
   } catch (e) {
     console.log('Something went wrong in getVersion: ', e);
