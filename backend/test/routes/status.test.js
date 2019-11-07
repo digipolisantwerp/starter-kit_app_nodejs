@@ -12,6 +12,8 @@ describe('Status route test:', () => {
   before((done) => {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
+    }
+    if (!fs.existsSync(versionFile)) {
       fs.writeFileSync(versionFile, '0.0.1');
     }
     sandbox = sinon.createSandbox();
