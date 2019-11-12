@@ -3,10 +3,10 @@ import express from 'express';
 import helmet from 'helmet';
 import responseHandler from 'digipolis-response';
 import session from 'express-session';
-
-import routes from './routes';
 import errorHandler from './middlewares/error.middleware';
 import initializeDatabase, { closeDatabaseConnection } from './helpers/db.helper';
+import logger from './helpers/logging.helper';
+import routes from './routes';
 
 let app;
 let server;
@@ -25,8 +25,7 @@ function initializeExpress() {
   app.use(responseHandler());
   app.use(routes);
   app.use((err, req, res, next) => {
-    // eslint-disable-next-line no-console
-    console.log(err);
+    logger.error(err);
     return next(err);
   });
   app.enable('trust proxy');
@@ -36,8 +35,7 @@ function initializeExpress() {
 function startListening() {
   return new Promise((resolve) => {
     server = app.listen(process.env.PORT, () => {
-      // eslint-disable-next-line no-console
-      console.log(`Express server listening on port ${server.address().port}`);
+      logger.info(`Express server listening on port ${server.address().port}`);
       return resolve();
     });
   });
@@ -50,8 +48,7 @@ async function start() {
     await startListening();
     return app;
   } catch (err) {
-    // eslint-disable-next-line no-console
-    console.error(`Error occured ${err}`);
+    logger.error(`Error occured ${err}`);
     return process.exit(1);
   }
 }
