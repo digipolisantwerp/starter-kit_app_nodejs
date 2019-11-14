@@ -36,7 +36,7 @@ By default the login routes are mounted on `/auth`:
 ### Enviroment files (only for local & test purposes)
 
 The enviroment can be set from env files for running the app locally & running the test suite.
-For production The enviroment should be set trough configuration of the server where the app runs. For Digipois this is AppConfig. The env files will be overwritten by existing env.
+For production The enviroment should be set through configuration of the server where the app runs. For Digipolis this is AppConfig. The env files will be overwritten by existing env.
 
 - **local enviroment**: [backend/environment/local.env ](https://github.com/digipolisantwerp/starter-kit_app_nodejs/blob/master/backend/environment/local.env)
 - **test eviroment**: [backend/environment/test.env ](https://github.com/digipolisantwerp/starter-kit_app_nodejs/blob/master/backend/environment/test.env)
