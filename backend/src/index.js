@@ -1,10 +1,9 @@
 import app from './app';
+import logger from './helpers/logging.helper';
 
 app.start((err) => {
   if (err) {
-    // eslint-disable-next-line no-console
-    console.error(`Error=${err}`);
+    logger.error(`Error=${err}`);
   }
-  // eslint-disable-next-line no-console
-  console.info('app bootstrap finished');
+  logger.info('app bootstrap finished');
 });
