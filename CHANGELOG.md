@@ -7,8 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.3.0] - 2019-11-18
+
+ - Add node 13 support
+ - Use [Winston](https://www.npmjs.com/package/winston) as the default logger & disable logging during tests to prevent clutter in output
+ - Minor bugfixes
+
 ## [1.2.0] - 2019-10-23
- 
+
  - Add version call
  - Use `npm ci` for faster and stricter builds
  - Upgrade to node 12.13 (LTS)
@@ -17,12 +23,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
  - Remove vulnerabilities
 
 ## [1.1.0] - 2019-09-17
- 
+
  - Remove the need to initialize the error middleware
- - Rewrite error middleware with tests 
+ - Rewrite error middleware with tests
  - Add eslint to default test & fix warnings
  - Add test for fallback route * to cover 100%
- - minor bufixes
+ - Minor bugfixes
 
 
 ## [1.0.1] - 2019-09-02
@@ -40,7 +46,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 First tagged release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.3.0...HEAD
+
+[1.3.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.3.0
 
 [1.2.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.2.0
 
