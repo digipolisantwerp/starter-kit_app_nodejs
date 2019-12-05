@@ -26,10 +26,10 @@ services:
     volumes:
      - ./backend:/code/backend
      - /code/backend/node_modules
-    links:
-      - mongo
     networks: 
       - shared-network
+    depends_on: 
+      - mongo
 
   mongo:
     image: mongo:3.2

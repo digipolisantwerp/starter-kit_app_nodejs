@@ -8,8 +8,10 @@ RUN echo '{ "allow_root": true }' > /root/.bowerrc
 COPY ./frontend /code/frontend
 WORKDIR /code/frontend
 
-RUN npm i
-RUN npm run build:prod
+# Run your build commands for front end frameworks here.
+# Example for a possible Angular or React setup:
+# RUN npm ci
+# RUN npm run build:prod
 
 ###############################################################################
 ###	Backend (BFF)

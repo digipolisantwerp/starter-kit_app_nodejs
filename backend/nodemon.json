@@ -10,8 +10,5 @@
   "exec": "babel-node",
   "execMap": {
     "js": "node"
-  },
-  "env": {
-    "ENVIRONMENT": "local"
   }
 }
