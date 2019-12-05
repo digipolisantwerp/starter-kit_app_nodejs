@@ -21,7 +21,7 @@ RUN mkdir -p /code/backend
 WORKDIR /code/backend
 
 COPY ./backend /code/backend
-RUN npm i
+RUN npm ci
 RUN npm run build
 
 ARG release

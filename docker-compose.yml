@@ -1,17 +1,17 @@
 version: '3'
 services:
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    command: npm run start
-    ports: 
-      - 4200:4200
-    volumes:
-      - /code/frontend/node_modules
-      - ./frontend:/code/frontend
-    links: 
-      - backend
+  # frontend:
+    # build:
+    #   context: ./frontend
+    #   dockerfile: Dockerfile
+    # command: npm run start
+    # ports: 
+    #   - 4200:4200
+    # volumes:
+    #   - /code/frontend/node_modules
+    #   - ./frontend:/code/frontend
+    # links: 
+    #   - backend
 
   backend:
     build:
@@ -26,8 +26,6 @@ services:
     volumes:
      - ./backend:/code/backend
      - /code/backend/node_modules
-    networks: 
-      - shared-network
     depends_on: 
       - mongo
     links:
