@@ -10,8 +10,8 @@ services:
     volumes:
       - /code/frontend/node_modules
       - ./frontend:/code/frontend
-    networks: 
-      - shared-network
+    links: 
+      - backend
 
   backend:
     build:
@@ -30,15 +30,12 @@ services:
       - shared-network
     depends_on: 
       - mongo
+    links:
+      - mongo
 
   mongo:
     image: mongo:3.2
     ports:
       - "27017:27017"
-    networks: 
-      - shared-network
-networks:
-  shared-network:
-    driver: bridge
 
     
