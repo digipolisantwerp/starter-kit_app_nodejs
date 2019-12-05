@@ -1,19 +1,44 @@
-version: '2'
+version: '3'
 services:
-  app:
-    build: .
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    command: npm run start
+    ports: 
+      - "4200:4200"
+    volumes:
+      - /code/frontend/node_modules
+      - ./frontend:/code/frontend
+    networks: 
+      - shared-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     env_file: backend/.env-docker.list
-    command: node_modules/.bin/nodemon src/index.js --inspect=0.0.0.0:9229 --exec babel-node
+    command: npm run start
     tty: true
     ports:
-      - 2000:2000
-      - 9229:9229
+      - "2000:2000"
+      - "9229:9229"
     volumes:
-     - ./backend:/app/backend
-     - ./frontend:/app/frontend
+     - ./backend:/code/backend
+     - /code/backend/node_modules
     links:
       - mongo
+    networks: 
+      - shared-network
+
   mongo:
     image: mongo:3.2
     ports:
       - "27017:27017"
+    networks: 
+      - shared-network
+networks:
+  shared-network:
+    driver: bridge
+
+    

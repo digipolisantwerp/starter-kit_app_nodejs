@@ -1,27 +1,25 @@
-FROM node:12.13-buster
+FROM node:12
 
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 
 ###############################################################################
 ###	Frontend
 ###############################################################################
-RUN mkdir -p /app/frontend
-WORKDIR /app/frontend
+COPY ./frontend /code/frontend
+WORKDIR /code/frontend
 
-COPY frontend ./
-# RUN npm ci
-# RUN npm run build
+RUN npm i
+RUN npm run build:prod
 
 ###############################################################################
 ###	Backend (BFF)
 ###############################################################################
 
-RUN mkdir -p /app/backend
-WORKDIR /app/backend
+RUN mkdir -p /code/backend
+WORKDIR /code/backend
 
-COPY backend/package.json backend/package-lock.json ./
-RUN npm ci
-COPY backend ./
+COPY ./backend /code/backend
+RUN npm i
 RUN npm run build
 
 ARG release
