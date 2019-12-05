@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     command: npm run start
     ports: 
-      - "4200:4200"
+      - 4200:4200
     volumes:
       - /code/frontend/node_modules
       - ./frontend:/code/frontend
@@ -21,8 +21,8 @@ services:
     command: npm run start
     tty: true
     ports:
-      - "2000:2000"
-      - "9229:9229"
+      - 2000:2000
+      - 9229:9229
     volumes:
      - ./backend:/code/backend
      - /code/backend/node_modules
