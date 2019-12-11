@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "start": "env-cmd ./environment/local.env nodemon src/index.js --exec babel-node",
+    "start": "env-cmd --no-override ./environment/local.env nodemon src/index.js",
     "build": "babel src -d dist",
     "serve": "node dist/index.js",
     "lint": "eslint **/*.js",
