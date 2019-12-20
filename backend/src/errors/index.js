@@ -1,14 +1,20 @@
-import HttpStatus from 'http-status';
 import uuid from 'uuid/v4';
-import { pick } from 'lodash';
+import HttpStatus from './statusCodes';
 
-const form = errorDefault => customException =>
-  Object.assign(
+const form = errorDefault => (customException) => {
+  const { identifier, code, url, meta, title, message } = customException;
+  const customParams = Object.entries({ identifier, code, url, meta, title, message })
+    .reduce((acc, [key, value]) => {
+      if (typeof value !== 'undefined') acc[key] = value;
+      return acc;
+    }, {});
+  return Object.assign(
     {},
     errorDefault,
     { identifier: uuid() },
-    pick(customException, ['identifier', 'code', 'url', 'meta', 'title', 'message']),
+    customParams,
   );
+};
 
 const errors = {
   notFound: form({
