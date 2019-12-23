@@ -57,9 +57,16 @@ describe('errorHandler', () => {
     };
     errorHandler({ message: 'validation error' }, {}, res, sandbox.stub());
     const withoutMeta = Object.assign({}, withMeta);
-    withoutMeta.meta = undefined;
     withoutMeta.title = 'Validation Error';
-    sinon.assert.calledWith(json, withoutMeta);
+    withoutMeta.meta = sinon.match.any;
+    sinon.assert.calledWith(json, {
+      code: -1,
+      identifier: undefined,
+      message: 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).',
+      status: 400,
+      title: 'Validation Error',
+      type: undefined,
+    });
   });
   it('test errorhandling with field in production', () => {
     process.env.NODE_ENV = 'production';
@@ -71,11 +78,9 @@ describe('errorHandler', () => {
     const fallbackerror = {
       status: 500,
       title: 'Something went wrong',
-      message:
-      'The server encountered an unexpected condition that prevented it from fulfilling the request.',
-      identifier: undefined,
+      identifier: sinon.match.any,
+      message: 'The server encountered an unexpected condition that prevented it from fulfilling the request.',
       code: -1,
-      meta: undefined,
     };
     sinon.assert.calledWith(json, fallbackerror);
   });
