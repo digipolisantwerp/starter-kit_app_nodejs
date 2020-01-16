@@ -8,7 +8,7 @@ Go up one level from this folder and type the following commands:
 
 ```
 > npm install -g @digipolis/start-react
-> digipolis-start-react
+> digipolis-start-ui
 ```
 
 This will overwrite this frontend folder with an ACPaaS UI-ready React app.
