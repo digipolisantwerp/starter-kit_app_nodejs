@@ -4,8 +4,8 @@
 
 A boilerplate project for Digipolis, created to keep a consistent folder stucture and implements some much used modules like:
 
--  [`@digipolis/auth`](https://github.com/digipolisantwerp/auth_module_nodejs)
--  [`digipolis-response`](https://www.npmjs.com/package/digipolis-response)
+-  [`@digipolis/auth`](https://www.npmjs.com/package/@digipolis/auth)
+-  [`@digipolis/response`](https://www.npmjs.com/package/@digipolis/response)
 
 ## How to use
 

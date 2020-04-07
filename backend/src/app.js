@@ -1,7 +1,7 @@
 import bodyParser from 'body-parser';
 import express from 'express';
 import helmet from 'helmet';
-import responseHandler from 'digipolis-response';
+import responseHandler from '@digipolis/response';
 import session from 'express-session';
 import errorHandler from './middlewares/error.middleware';
 import initializeDatabase, { closeDatabaseConnection } from './helpers/db.helper';
