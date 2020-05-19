@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+ - Add node 14 support
+ - vulnerabilities updated to fix vulnerabilities in dev dependencies
+
 ## [1.3.0] - 2019-11-18
 
  - Add node 13 support
