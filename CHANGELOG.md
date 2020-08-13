@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.4.0] - 2020-08-13
+
  - Add node 14 support
+ - Add LICENSE
+ - Add CODE_OF_CONDUCT
+ - Update Docker setup
+ - Fix db version
  - vulnerabilities updated to fix vulnerabilities in dev dependencies
 
 ## [1.3.0] - 2019-11-18
