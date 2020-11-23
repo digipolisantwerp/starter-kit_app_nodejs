@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:14
 
 COPY . /code/backend
 WORKDIR /code/backend

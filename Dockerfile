@@ -1,6 +1,17 @@
 FROM node:14
 
-RUN echo '{ "allow_root": true }' > /root/.bowerrc
+###############################################################################
+### install dependencies
+###############################################################################
+
+# COPY ./frontend/package*.json /code/frontend/
+# WORKDIR /code/frontend
+# RUN npm ci
+
+COPY ./backend/package*.json /code/backend/
+WORKDIR /code/backend
+RUN npm ci
+
 
 ###############################################################################
 ###	Frontend
@@ -10,22 +21,24 @@ WORKDIR /code/frontend
 
 # Run your build commands for front end frameworks here.
 # Example for a possible Angular or React setup:
-# RUN npm ci
 # RUN npm run build:prod
 
 ###############################################################################
 ###	Backend (BFF)
 ###############################################################################
 
-RUN mkdir -p /code/backend
-WORKDIR /code/backend
 
 COPY ./backend /code/backend
-RUN npm ci
+WORKDIR /code/backend
+
 RUN npm run build
 
 ARG release
-RUN mkdir -p public && \
-    echo -n $release > public/VERSION
+
+RUN if [ -z "$release" ] ; then \
+    echo -n $(node -e "console.log(Math.floor(Math.random()*10000))") > public/VERSION; \
+  else \
+    echo -n $release > public/VERSION; \
+  fi
 
 CMD ["node", "dist/index.js"]
