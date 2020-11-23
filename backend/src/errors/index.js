@@ -1,4 +1,4 @@
-import uuid from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import HttpStatus from './statusCodes';
 
 const form = errorDefault => (customException) => {
@@ -11,7 +11,7 @@ const form = errorDefault => (customException) => {
   return Object.assign(
     {},
     errorDefault,
-    { identifier: uuid() },
+    { identifier: uuidv4() },
     customParams,
   );
 };
