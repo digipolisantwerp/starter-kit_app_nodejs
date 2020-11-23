@@ -33,8 +33,12 @@ WORKDIR /code/backend
 
 RUN npm run build
 
-RUN mkdir -p public && \
-    echo -n $(node -e "console.log(Math.floor(Math.random()*10000))") > public/VERSION \
-        cat public/VERSION
+ARG release
+
+RUN if [ -z "$release" ] ; then \
+    echo -n $(node -e "console.log(Math.floor(Math.random()*10000))") > public/VERSION; \
+  else \
+    echo -n $release > public/VERSION; \
+  fi
 
 CMD ["node", "dist/index.js"]
