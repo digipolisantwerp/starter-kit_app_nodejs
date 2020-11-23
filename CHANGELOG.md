@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.4.2] - 2020-08-13
+
+ - Improve reusability of docker layers & update dependencies
+ - Fallback if ARG release is not provided
+
 ## [1.4.0] - 2020-08-13
 
  - Add node 14 support
@@ -55,7 +60,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 First tagged release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.4.2...HEAD
+
+[1.4.2]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.4.2
 
 [1.4.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.4.0
 
