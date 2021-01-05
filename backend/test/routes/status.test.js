@@ -20,7 +20,7 @@ describe('Status route test:', () => {
     app.start().then((application) => {
       server = application;
       done();
-    });
+    }).catch(e => done(e));
     sandbox.restore();
   });
   after((done) => {

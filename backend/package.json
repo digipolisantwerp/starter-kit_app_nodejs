@@ -12,7 +12,7 @@
     "serve": "node dist/index.js",
     "lint": "eslint **/*.js",
     "test": "env-cmd ./environment/test.env --no-override nyc mocha --recursive  --reporter=spec --timeout=15000 --slow 2 --require @babel/register --require @babel/polyfill  --require ./test/setup.test.js --exit && npm run lint",
-    "test:coverage": "env-cmd ./environment/test.env  ./node_modules/.bin/nyc  --reporter=lcovonly --reporter=text ./node_modules/.bin/mocha --recursive --timeout=15000 --slow 2 --require @babel/register --require @babel/polyfill --require ./test/setup.test.js --exit",
+    "test:coverage": "env-cmd ./environment/test.env  ./node_modules/.bin/nyc  --reporter=lcovonly  --reporter=html --reporter=text ./node_modules/.bin/mocha --recursive --timeout=15000 --slow 2 --require @babel/register --require @babel/polyfill --require ./test/setup.test.js --exit",
     "test-build": "env-cmd ./environment/test.env nyc mocha --recursive --reporter=mocha-bamboo-reporter --timeout=15000 --slow 2 --require @babel/register  --require @babel/polyfill --require ./test/setup.test.js --exit"
   },
   "keywords": [],
@@ -26,6 +26,8 @@
     "express-session": "^1.17.1",
     "helmet": "^4.2.0",
     "mongoose": "^5.10.15",
+    "pg": "^8.5.1",
+    "sequelize": "^6.3.5",
     "uuid": "~8.3.1",
     "winston": "^3.3.3"
   },
