@@ -13,6 +13,5 @@ export async function getExampleById(exampleId) {
 }
 
 export function getAllExamples() {
-  console.log('here 🔥');
   return Example.findAll();
 }

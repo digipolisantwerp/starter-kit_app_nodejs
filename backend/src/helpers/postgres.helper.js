@@ -3,16 +3,14 @@ import logger from './logging.helper';
 
 const sequelize = new Sequelize(process.env.POSTGRES_CONNECTIONSTRING);
 
-function initializeDatabase() {
-  return sequelize
-    .authenticate()
-    .then(() => {
-      logger.info('Connection has been established successfully.');
-    })
-    .catch((err) => {
-      logger.error('Unable to connect to the database:', err);
-      throw (err);
-    });
+async function initializeDatabase() {
+  try {
+    await sequelize.authenticate();
+    logger.info('Connection has been established successfully.');
+  } catch (e) {
+    logger.error('Unable to connect to the database:', e);
+    throw (e);
+  }
 }
 
 export function closeDatabaseConnection() {
