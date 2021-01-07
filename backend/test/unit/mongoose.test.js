@@ -1,8 +1,8 @@
 import sinon from 'sinon';
 import mongoose from 'mongoose';
-import initializeDatabase from '../../src/helpers/db.helper';
+import initializeDatabase from '../../src/helpers/mongoose.helper';
 
-describe('DB', () => {
+describe('DB mongoose', () => {
   let sandbox;
   before((done) => {
     sandbox = sinon.createSandbox();

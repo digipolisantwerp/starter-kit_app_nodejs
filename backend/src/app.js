@@ -4,7 +4,8 @@ import helmet from 'helmet';
 import responseHandler from '@digipolis/response';
 import session from 'express-session';
 import errorHandler from './middlewares/error.middleware';
-import initializeDatabase, { closeDatabaseConnection } from './helpers/db.helper';
+import initializeDatabase, { closeDatabaseConnection } from './helpers/mongoose.helper';
+// import initializeDatabase, { closeDatabaseConnection } from './helpers/postgres.helper';
 import logger from './helpers/logging.helper';
 import routes from './routes';
 

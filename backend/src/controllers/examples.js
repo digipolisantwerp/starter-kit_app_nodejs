@@ -1,8 +1,7 @@
 import Errors from '../errors';
-import {
-  getExampleById,
-  getAllExamples,
-} from '../services/example';
+
+import { getExampleById, getAllExamples } from '../services/example';
+// import { getExampleById, getAllExamples } from '../services/pgexample';
 
 export function getExample(req, res, next) {
   getExampleById(req.params.exampleId)
