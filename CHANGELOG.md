@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.5.0] - 2021-01-07
+
+ - Postgres support
+
 ## [1.4.2] - 2020-08-13
 
  - Improve reusability of docker layers & update dependencies
