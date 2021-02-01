@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.5.1] - 2021-02-01
+
+ - build issue (missing public folder)
+
 ## [1.5.0] - 2021-01-07
 
  - Postgres support
@@ -64,7 +68,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 First tagged release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.4.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.5.1...HEAD
+
+[1.5.1]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.5.1
+
+[1.5.0]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.5.0
 
 [1.4.2]: https://github.com/digipolisantwerp/starter-kit_app_nodejs/compare/v1.4.2
 
