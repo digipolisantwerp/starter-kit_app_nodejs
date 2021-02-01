@@ -35,6 +35,8 @@ RUN npm run build
 
 ARG release
 
+RUN mkdir -p public
+
 RUN if [ -z "$release" ] ; then \
     date +"%T %m-%d-%y" > public/VERSION; \
   else \
