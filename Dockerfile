@@ -35,6 +35,8 @@ RUN npm run build
 
 ARG release
 
+RUN mkdir -p public
+
 RUN if [ -z "$release" ] ; then \
     echo -n $(node -e "console.log(Math.floor(Math.random()*10000))") > public/VERSION; \
   else \
