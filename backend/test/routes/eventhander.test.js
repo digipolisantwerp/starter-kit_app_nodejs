@@ -47,8 +47,8 @@ describe('/api/events', () => {
       .expect(500);
   });
 });
-describe('/api/events/recieveEvent', () => {
-  const routerecieve = '/api/events/recieveEvent';
+describe('/api/events/my-event', () => {
+  const routerecieve = '/api/events/my-event';
   let server;
   let sandbox;
   beforeEach((done) => {
@@ -76,7 +76,7 @@ describe('/api/events/recieveEvent', () => {
       .expect('Content-Type', /json/)
       .expect(200)
       .then(({ body }) => {
-        sinon.assert.calledWith(logger.info, 'recieved event', { name: 'john' });
+        sinon.assert.calledWith(logger.info, 'handling event', { name: 'john' });
         expect(body.status).to.deep.equal('ok');
       });
   });

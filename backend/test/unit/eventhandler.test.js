@@ -45,9 +45,10 @@ describe('eventhandler', () => {
     try {
       await sendEvent('namespace', 'topic', 'message', 'ownerKey');
     } catch (e) {
-      sinon.assert.calledWith(logger.error, 'data');
+      sinon.assert.calledWith(logger.error, 'EventHandler publish failed');
+      sinon.assert.calledWith(logger.error, JSON.stringify('data'));
       sinon.assert.calledWith(logger.error, 'status');
-      sinon.assert.calledWith(logger.error, 'headers');
+      sinon.assert.calledWith(logger.error, JSON.stringify('headers'));
     }
   });
   it('sendEvent fails without response', async () => {
@@ -58,7 +59,8 @@ describe('eventhandler', () => {
     try {
       await sendEvent('namespace', 'topic', 'message', 'ownerKey');
     } catch (e) {
-      sinon.assert.calledWith(logger.error, 'request');
+      sinon.assert.calledWith(logger.error, 'EventHandler publish failed');
+      sinon.assert.calledWith(logger.error, JSON.stringify('request'));
     }
   });
   it('recieve event', async () => {
@@ -69,7 +71,8 @@ describe('eventhandler', () => {
     try {
       await sendEvent('namespace', 'topic', 'message', 'ownerKey');
     } catch (e) {
-      sinon.assert.calledWith(logger.error, 'request');
+      sinon.assert.calledWith(logger.error, 'EventHandler publish failed');
+      sinon.assert.calledWith(logger.error, JSON.stringify('request'));
     }
   });
 });

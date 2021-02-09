@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import {
   postEvent,
-  recieveEvent,
+  handleEvent,
 } from '../controllers/events';
 
 const router = new Router();

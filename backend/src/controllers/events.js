@@ -11,7 +11,7 @@ export async function postEvent(req, res, next) {
   }
 }
 
-export async function recieveEvent(req, res, next) {
+export async function handleEvent(req, res, next) {
   try {
     logger.info('handling event', req.body);
     // TODO: Handle event
