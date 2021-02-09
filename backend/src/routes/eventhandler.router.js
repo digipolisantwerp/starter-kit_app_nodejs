@@ -7,6 +7,7 @@ import {
 const router = new Router();
 
 router.post('/', postEvent);
-router.post('/recieveEvent', recieveEvent);
+// TODO: Rename "my-event" to a term describing the event you want to handle
+router.post('/my-event', handleEvent);
 
 export default router;
