@@ -1,8 +1,5 @@
 import { Router } from 'express';
-import {
-  getExample,
-  getExamples,
-} from '../controllers/examples';
+import { getExample, getExamples } from '../controllers/examples';
 
 const router = new Router();
 
