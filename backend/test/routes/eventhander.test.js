@@ -7,46 +7,6 @@ import logger from '../../src/helpers/logging.helper';
 
 import app from '../../src/app';
 
-const route = '/api/events';
-describe('/api/events', () => {
-  let server;
-  let sandbox;
-  beforeEach((done) => {
-    sandbox = sinon.createSandbox();
-    app.start().then((application) => {
-      server = application;
-      return done();
-    });
-  });
-  afterEach((done) => {
-    sandbox.restore();
-    done();
-  });
-  after((done) => {
-    app.stop();
-    done();
-  });
-  it(`POST: ${route}`, () => {
-    sandbox.stub(eventhandler, 'sendEvent').resolves();
-    sandbox.stub(axios, 'post').resolves();
-    return request(server)
-      .post(route)
-      .send({ name: 'john' })
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then(({ body }) => {
-        expect(body.status).to.deep.equal('ok');
-      });
-  });
-  it(`POST: ${route} fails`, () => {
-    sandbox.stub(eventhandler, 'sendEvent').rejects();
-    return request(server)
-      .post(route)
-      .send({ name: 'john' })
-      .expect('Content-Type', /json/)
-      .expect(500);
-  });
-});
 describe('/api/events/my-event', () => {
   const routerecieve = '/api/events/my-event';
   let server;
