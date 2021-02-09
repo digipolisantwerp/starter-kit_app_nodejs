@@ -13,7 +13,8 @@ export async function postEvent(req, res, next) {
 
 export async function recieveEvent(req, res, next) {
   try {
-    logger.info('recieved event', req.body);
+    logger.info('handling event', req.body);
+    // TODO: Handle event
     return res.json({ status: 'ok' });
   } catch (e) {
     return next(e);
