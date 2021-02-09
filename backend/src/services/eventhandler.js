@@ -5,7 +5,6 @@ export async function sendEvent(namespace, topic, message, ownerKey) {
   const config = {
     baseUrl: process.env.EVENTHANDLER_BASEURL,
     apiKey: process.env.EVENTHANDLER_APIKEY,
-    debug: true,
   };
   try {
     await axios.post(
@@ -19,12 +18,13 @@ export async function sendEvent(namespace, topic, message, ownerKey) {
       },
     );
   } catch (error) {
+    logger.error('EventHandler publish failed');
     if (error.response) {
-      logger.error(error.response.data);
+      logger.error(JSON.stringify(error.response.data));
       logger.error(error.response.status);
-      logger.error(error.response.headers);
+      logger.error(JSON.stringify(error.response.headers));
     } else if (error.request) {
-      logger.error(error.request);
+      logger.error(JSON.stringify(error.request));
     }
     throw error;
   }

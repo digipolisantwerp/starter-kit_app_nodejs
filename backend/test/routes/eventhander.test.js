@@ -47,7 +47,7 @@ describe('/api/events', () => {
       .expect(500);
   });
 });
-describe('/api/recieveEvent', () => {
+describe('/api/events/recieveEvent', () => {
   const routerecieve = '/api/events/recieveEvent';
   let server;
   let sandbox;
